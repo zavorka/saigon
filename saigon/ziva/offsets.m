@@ -69,8 +69,8 @@ kern_return_t set_driver_offsets (char * driver_name) {
         
     } else if(strcmp(driver_name, "AppleAVEDriver") == 0) {
         
-        g_offsets.encode_frame_input_buffer_size = 0x300;
-        g_offsets.encode_frame_output_buffer_size = 0x1E8;
+        g_offsets.encode_frame_input_buffer_size = 0x30000;
+        g_offsets.encode_frame_output_buffer_size = 0xe8010000;
         
     } else {
         
@@ -214,8 +214,8 @@ void init_default(){
     
     // TODO: Find offsets for each device instead
     g_offsets.main_kernel_base = 0xfffffff000000000;
-    g_offsets.kernel_task = 0xfffffff0075c2050 - g_offsets.kernel_base;
-    g_offsets.realhost = 0xfffffff007548a98 - g_offsets.kernel_base;
+    g_offsets.kernel_task = 0xfffffff0075b2050 - g_offsets.kernel_base;
+    g_offsets.realhost = 0xfffffff007538a98 - g_offsets.kernel_base;
 }
 
 void init_RELEASE_ARM64_T8010_1630_37894221() {
