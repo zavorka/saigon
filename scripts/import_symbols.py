@@ -18,10 +18,7 @@ def add_to_ida(line):
 
     address = int(address, 16)
 
-    idc.MakeCode(address)
-    idc.MakeFunction(address)
-    idc.MakeNameEx(address, name, 0x100)
-
+    idc.add_entry(address, address, name, 1)
 
 if __name__ == "__main__":
 
